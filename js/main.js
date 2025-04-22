@@ -1,5 +1,5 @@
 let userList=[
-  {name:"admin6868",password:"09042006",role:"ADMIN",accountNumber:"0867422301",accountUser:"HOANG DINH TUNG"},
+  {name:"admin6868",password:"09042006",role:"ADMIN",accountNumber:"0867422301",accountUser:"HOANG DINH TUNG",assets:"99999999999999"},
 
 ];
 

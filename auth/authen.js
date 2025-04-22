@@ -44,6 +44,7 @@ function register(event) {
     }
     /* thêm dữ liệu vừa đăng ký vào danh sách */
     data.role = "USER"
+    data.assets = "1000000"
     userList.push(data)
 
     /* lưu dữ liệu lên local */

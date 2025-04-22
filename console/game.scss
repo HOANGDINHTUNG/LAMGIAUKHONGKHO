@@ -85,9 +85,7 @@ body {
       img {
         width: 200px;
       }
-      span{
-        
-      }
+      
     }
     .el-even {
       position: absolute;
@@ -115,7 +113,7 @@ body {
       span {
         position: absolute;
         top: 5px;
-        left: 60px;
+        left: 10px;
         font-size: 18px;
         font-weight: 900;
         color: rgb(255, 183, 0);
@@ -124,7 +122,7 @@ body {
     .el-bet-main-right {
       position: absolute;
       top: 70px;
-      right: 150px;
+      right: 90px;
       span {
         font-size: 18px;
         font-weight: 900;
@@ -141,7 +139,7 @@ body {
       span {
         position: absolute;
         top: 5px;
-        left: 60px;
+        left: 10px;
         font-size: 18px;
         font-weight: 900;
         color: rgb(255, 183, 0);
@@ -150,7 +148,7 @@ body {
     .el-bet-main-left {
       position: absolute;
       top: 70px;
-      left: 140px;
+      left: 100px;
       span {
         font-size: 18px;
         font-weight: 900;
@@ -309,4 +307,92 @@ body {
       }
     }
   }
+}
+
+.el-bet-money-left span,
+.el-bet-money-right span {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Định dạng cho đồng hồ đếm ngược */
+.countdown-timer {
+  font-size: 6rem; /* Kích thước chữ lớn */
+  font-weight: 700; /* Đậm chữ */
+  color: #ffe100; /* Màu vàng sáng nổi bật */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif; /* Font chữ đẹp */
+  text-transform: uppercase; /* Chữ viết hoa */
+  letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+  animation: pulse 1.5s infinite; /* Hiệu ứng nhấp nháy nhẹ */
+  border: none; /* Bỏ viền */
+}
+
+/* Hiệu ứng nhấp nháy nhẹ cho chữ */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tạo hiệu ứng khi thời gian gần hết */
+.countdown-timer.time-end {
+  color: #ff0000; /* Đổi màu chữ khi gần hết thời gian */
+}
+
+
+/* Dĩa trắng mở lên */
+.el-plate-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Xúc xắc */
+.dice-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dice {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.dice:hover {
+  transform: scale(1.1);
 }

@@ -60,9 +60,9 @@ function renderHeader() {
                   <img src="./image/1455615063-than-bai-1.webp" />
                 </div>
                 <div class="d-flex flex-column">
-                  <span>user name</span>
+                  <span>${userLogin.name}</span>
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="number">0</span>
+                    <span class="money">${userLogin.role!="ADMIN"?`${userLogin.assets}`:`+&infin;`}</span>
                     <i class="fas fa-chevron-down" onclick="toggleMenu()"></i>
                   </div>
 
@@ -142,9 +142,23 @@ function renderHeader() {
 }
 
 function logout() {
-    if (!confirm("bạn thật sự muốn đăng xuất?")) return
-    window.location.reload()
-    localStorage.removeItem("userLogin")
+  if (!confirm("bạn thật sự muốn đăng xuất?")) return
+  window.location.reload()
+  localStorage.removeItem("userLogin")
 }
 
 renderHeader();
+
+let play_btn=document.querySelectorAll(".play-btn")[12]
+let carouselItem=document.querySelectorAll(".carouselItem")[12]
+carouselItem.addEventListener('click',()=>{
+  if(userLogin){
+    play_btn.innerHTML=`
+      <a href="./console/game.html">Vào trò chơi</a>
+    `
+  }else{
+    play_btn.innerHTML=`
+      <a href="./auth/authen.html" target="_parent">Vào trò chơi</a>
+    `
+  }
+})
