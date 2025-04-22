@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LÀM GIÀU KHÔNG KHÓ</title>
+    <!-- Thêm vào trong <head> -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_1234567_abcd.css" />
+    <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="background-color: black; box-sizing: border-box" class="w-100">
+    // thanh navbar
+    <header>
+      <nav class="d-flex flex-column navbar-dark fixed-top">
+        <div class="d-flex justify-content-between w-100">
+          <img src="image/52185d3a200d1c9edccf045f1801a518.png" />
+          <div class="d-flex flex-column gap-3 feature-support"></div>
+        </div>
+        <div style="background-color: #1e222c" class="menu-main row mt-2">
+          <div class="nav-menu col-auto active">
+            <span>🏢</span>
+            <span>Home</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>8️⃣</span>
+            <span>Sổ xố</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🍀</span>
+            <span>Luckywin</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>▶️</span>
+            <span>Casino</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🎰</span>
+            <span>Nổ hũ</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🦈</span>
+            <span>Bắn cá</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>⚽</span>
+            <span>Thể thao</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🃏</span>
+            <span>Game bài</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🐓</span>
+            <span>Đá gà</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🎁</span>
+            <span>Ưu đãi</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🛒</span>
+            <span>Đại lý</span>
+          </div>
+          <div class="nav-menu col-auto">
+            <span>🛠️</span>
+            <span>Hỗ trợ</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <img id="slideshow" src="./image/d523c7753c26357df40d2cdba5b01e26.png" id="Slideshow" />
+
+      <div class="mini-game-wrapper" id="miniGame">
+        <div class="mini-game-icon rotating-border">
+          <div class="mini-game-content">
+            <img src="./image/tải xuống.png" alt="Mini Games" />
+          </div>
+        </div>
+        <div class="badge" id="countdown">14</div>
+      </div>
+
+      <h2 class="text-warning text-center mt-5 mb-5 fs-1">Sắp Mở thưởng</h2>
+      <div class="d-flex flex-column mb-5">
+        <div class="row d-flex gap-3 mb-4">
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer4">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/SICBO20.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Sicbo 20 giây</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Kéo đôi</button>
+                    <button class="bet-btn">Tổng</button>
+                    <button class="bet-btn">Số Đơn</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box4">
+                <button class="num-btn">7</button>
+                <button class="num-btn">Xỉu</button>
+                <button class="num-btn">Lẻ</button>
+                <img src="./image/xucsac/dice (2).png" class="dice-img" />
+                <img src="./image/xucsac/dice (3).png" class="dice-img" />
+                <img src="./image/xucsac/dice (2).png" class="dice-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer5">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/SICBO30.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Sicbo 30 giây</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Kéo đôi</button>
+                    <button class="bet-btn">Tổng</button>
+                    <button class="bet-btn">Số Đơn</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box5">
+                <button class="num-btn">10</button>
+                <button class="num-btn">Tài</button>
+                <button class="num-btn">Chẵn</button>
+                <img src="./image/xucsac/dice (1).png" class="dice-img" />
+                <img src="./image/xucsac/dice (3).png" class="dice-img" />
+                <img src="./image/xucsac/dice (6).png" class="dice-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer6">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/mn45g.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Miền Nam VIP 45 giây</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Lô 2 số</button>
+                    <button class="bet-btn">Lô 2 Số 1K</button>
+                    <button class="bet-btn">Lô 3 Số</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box6">
+                <img src="./image/ball/ball 3.png" class="ball-img" />
+                <img src="./image/ball/ball 2.png" class="ball-img" />
+                <img src="./image/ball/ball 2.png" class="ball-img" />
+                <img src="./image/ball/ball 9.png" class="ball-img" />
+                <img src="./image/ball/ball 7.png" class="ball-img" />
+                <img src="./image/ball/ball 8.png" class="ball-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex gap-3">
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer1">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/mn1p.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Miền Nam VIP 1 phút</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Lô 2 số</button>
+                    <button class="bet-btn">Lô 2 Số 1K</button>
+                    <button class="bet-btn">Lô 3 Số</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box1">
+                <img src="./image/ball/ball 7.png" class="ball-img" />
+                <img src="./image/ball/ball 0.png" class="ball-img" />
+                <img src="./image/ball/ball 3.png" class="ball-img" />
+                <img src="./image/ball/ball 5.png" class="ball-img" />
+                <img src="./image/ball/ball 5.png" class="ball-img" />
+                <img src="./image/ball/ball 6.png" class="ball-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer2">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/mn90g.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Miền Nam VIP 90 giây</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Lô 2 số</button>
+                    <button class="bet-btn">Lô 2 Số 1K</button>
+                    <button class="bet-btn">Lô 3 Số</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box2">
+                <img src="./image/ball/ball 6.png" class="ball-img" />
+                <img src="./image/ball/ball 3.png" class="ball-img" />
+                <img src="./image/ball/ball 9.png" class="ball-img" />
+                <img src="./image/ball/ball 9.png" class="ball-img" />
+                <img src="./image/ball/ball 8.png" class="ball-img" />
+                <img src="./image/ball/ball 1.png" class="ball-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="sicbo-container">
+              <div class="timer"><span id="timer3">00:00:00</span></div>
+              <div class="d-flex">
+                <img src="./image/mn2p.png" class="ms-3" />
+                <div class="ms-3">
+                  <div class="title">Miền Nam VIP 2 phút</div>
+                  <div class="bet-options">
+                    <button class="bet-btn">Lô 2 số</button>
+                    <button class="bet-btn">Lô 2 Số 1K</button>
+                    <button class="bet-btn">Lô 3 Số</button>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2 box justify-content-between" id="box3">
+                <img src="./image/ball/ball 2.png" class="ball-img" />
+                <img src="./image/ball/ball 9.png" class="ball-img" />
+                <img src="./image/ball/ball 9.png" class="ball-img" />
+                <img src="./image/ball/ball 2.png" class="ball-img" />
+                <img src="./image/ball/ball 3.png" class="ball-img" />
+                <img src="./image/ball/ball 7.png" class="ball-img" />
+                <button class="place-bet">Đặt cược ⚡</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-warning text-center mt-5 mb-5 fs-1">Game nổi bật</h2>
+      <div class="d-flex justify-content-between align-items-center">
+        <button class="btn btn-primary" onclick="slide(-1)">&#10094;</button>
+        <div class="carousel-wrapper-outer">
+          <di class="carousel-container">
+            <div class="carousel-track" id="carousel">
+              <div class="carouselItem">
+                <img src="./image/game/00686a84ed8b0fb03cc6bb6603650ff6.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/0b0a9af3c2e45637b5d82b83afef36c4.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/14f604fc692bf99a7dbd2df66630063e.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/1f0ace207a08e70dc2ebe5f3e68c9f7e.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/6cf1a4fec68a1f7d5c1958f2666515cb.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/9c7464140e0cf54e2a8785ec9710fd88.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/b1f4f7e0ff162e5b772122e84ad31a7b.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/baaf3c9dd2f3462452ce02c7007fad9f.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/bf32a1c6bd335028bbbfd63d6e008c6b.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/cd2473d23f6f68c9ebab5e5d05665972.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/dc585a91d82231184daa5758b419171e.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/ec74201aad847041310204856018dec6.png" />
+                <button class="play-btn">Vào trò chơi</button>
+              </div>
+              <div class="carouselItem">
+                <img src="./image/game/f0a9c9070944dd10f81bc8255259db40.png" />
+                <button class="play-btn"></button>
+              </div>
+            </div>
+          </di>
+        </div>
+        <button class="btn" onclick="slide(1)">&#10095;</button>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <div>
+          <div class="sidebar-item">
+            <i class="fas fa-headset"></i>
+            <span>CSKH</span>
+          </div>
+          <div class="sidebar-item">
+            <i class="fas fa-gamepad"></i>
+            <span>Chơi thử</span>
+          </div>
+          <div class="sidebar-item">
+            <i class="fas fa-comments"></i>
+            <span>Phòng chat</span>
+            <span class="badge">99+</span>
+          </div>
+          <div class="sidebar-item">
+            <i class="fas fa-users"></i>
+            <span>Cộng đồng</span>
+          </div>
+          <div class="sidebar-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Tải APP</span>
+          </div>
+          <div class="sidebar-item">
+            <i class="fas fa-arrow-up"></i>
+            <span>Về đầu</span>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar" style="top: 430px; right: -70px">
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="fas fa-angle-double-left" id="toggleIcon"></i>
+        </div>
+      </div>
+    </main>
+
+    <!-- nhúng js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./home/home.js"></script>
+    <script src="./auth/authen.js"></script>
+    <script src="./js/effect.js"></script>
+  </body>
+</html>

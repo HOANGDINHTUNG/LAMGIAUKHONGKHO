@@ -1,0 +1,397 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../image/image-game/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  .table {
+    margin-top: 100px;
+    img {
+      width: 700px;
+      object-fit: contain;
+    }
+    .btn-delete {
+      position: absolute;
+      top: -155px;
+      right: 80px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-cup {
+      position: absolute;
+      top: -70px;
+      right: 30px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-chat {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-hand-delete {
+      position: absolute;
+      top: 100px;
+      right: 80px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-dor {
+      position: absolute;
+      top: -155px;
+      left: 20px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-rank {
+      position: absolute;
+      top: -70px;
+      left: -30px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-question {
+      position: absolute;
+      top: 20px;
+      left: -30px;
+      img {
+        width: 60px;
+      }
+    }
+    .btn-note {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      img {
+        width: 60px;
+      }
+    }
+    .el-bowl {
+      img {
+        width: 200px;
+      }
+    }
+    .el-plate {
+      img {
+        width: 200px;
+      }
+    }
+    .el-even {
+      position: absolute;
+      bottom: 120px;
+      left: 60px;
+      img {
+        width: 140px;
+      }
+    }
+    .el-odd {
+      position: absolute;
+      bottom: 120px;
+      right: 200px;
+      img {
+        width: 140px;
+      }
+    }
+    .el-bet-money-right {
+      position: absolute;
+      bottom: -30px;
+      right: 220px;
+      img {
+        width: 140px;
+      }
+      span {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 18px;
+        font-weight: 900;
+        color: rgb(255, 183, 0);
+      }
+    }
+    .el-bet-main-right {
+      position: absolute;
+      top: 70px;
+      right: 90px;
+      span {
+        font-size: 18px;
+        font-weight: 900;
+        color: rgb(255, 183, 0);
+      }
+    }
+    .el-bet-money-left {
+      position: absolute;
+      bottom: -30px;
+      left: 80px;
+      img {
+        width: 140px;
+      }
+      span {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-size: 18px;
+        font-weight: 900;
+        color: rgb(255, 183, 0);
+      }
+    }
+    .el-bet-main-left {
+      position: absolute;
+      top: 70px;
+      left: 100px;
+      span {
+        font-size: 18px;
+        font-weight: 900;
+        color: rgb(255, 183, 0);
+      }
+    }
+  }
+  .container-bet {
+    cursor: pointer;
+    visibility: hidden;
+    margin-top: 275px;
+    .k-1 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 22px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .k-10 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 15px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .k-50 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 15px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .k-100 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 10px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .k-500 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 10px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .m-1 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 20px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .m-10 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 15px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .m-50 {
+      img {
+        width: 70px;
+      }
+      span {
+        position: absolute;
+        left: 15px;
+        bottom: 8px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+    }
+    .btn-x2 {
+      img {
+        width: 200px;
+      }
+    }
+    .btn-bet {
+      img {
+        width: 250px;
+      }
+    }
+    .btn-cancel {
+      img {
+        width: 200px;
+      }
+    }
+  }
+  .container-current-money {
+    .current-money {
+      img {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 230px;
+      }
+      span {
+        position: absolute;
+        left: 80px;
+        bottom: 40px;
+        font-size: 20px;
+        font-weight: 900;
+        color: rgb(244, 202, 31);
+      }
+      .money {
+        z-index: 1;
+        position: absolute;
+        left: 100px;
+        bottom: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: rgb(242, 225, 159);
+      }
+    }
+  }
+}
+
+.el-bet-money-left span,
+.el-bet-money-right span {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+/* Định dạng cho đồng hồ đếm ngược */
+.countdown-timer {
+  font-size: 6rem; /* Kích thước chữ lớn */
+  font-weight: 700; /* Đậm chữ */
+  color: #ffe100; /* Màu vàng sáng nổi bật */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif; /* Font chữ đẹp */
+  text-transform: uppercase; /* Chữ viết hoa */
+  letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+  animation: pulse 1.5s infinite; /* Hiệu ứng nhấp nháy nhẹ */
+  border: none; /* Bỏ viền */
+}
+
+/* Hiệu ứng nhấp nháy nhẹ cho chữ */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Tạo hiệu ứng khi thời gian gần hết */
+.countdown-timer.time-end {
+  color: #ff0000; /* Đổi màu chữ khi gần hết thời gian */
+}
+
+
+/* Dĩa trắng mở lên */
+.el-plate-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Xúc xắc */
+.dice-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dice {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.dice:hover {
+  transform: scale(1.1);
+}

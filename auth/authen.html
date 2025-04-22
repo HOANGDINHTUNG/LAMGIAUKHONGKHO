@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký tài khoản</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="authen.css" />
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <!-- Form Đăng Ký -->
+        <form onsubmit="register(event)">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>Chào mừng các nhà đầu tư thông minh</span>
+          <input type="text" placeholder="Tài khoản" name="name" />
+          <input type="password" placeholder="6-15 ký tự và chữ số" name="password" />
+          <input type="password" placeholder="Xác nhận thêm lần nữa" name="passwordConfirm" />
+          <input type="email" placeholder="Nhập email" name="email" />
+          <input type="text" placeholder="Nhập số điện thoại" name="phoneNumber">
+          <button>Đăng ký</button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <!-- Form Đăng Nhập -->
+        <form onsubmit="login(event)">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <span id="btn_login_with_google" class="social"><i class="fab fa-google-plus-g"></i></span>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>Người chưa chơi là người chưa thắng</span>
+          <input type="text" placeholder="Tài khoản" name="name" />
+          <input type="password" placeholder="Mật khẩu" name="password" />
+          <a href="#">Forgot your password?</a>
+          <button>Đăng nhập</button>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p style="font-size: 20px;">Thua ở đâu gắp đôi ở đó</p>
+            <button class="ghost" id="signIn">Đăng nhập</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, BOR!</h1>
+            <p style="font-size: 20px;">Nghèo thì lâu chứ giầu thì mấy hồi</p>
+            <button class="ghost" id="signUp">Đăng ký</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="authen.js"></script>
+    <script type="module">
+      import {initializeApp} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithPopup,
+        GoogleAuthProvider,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDfmRx8QVU1QudrXB4n97AU_ZzfWZH6ngw",
+        authDomain: "myproject-edc0f.firebaseapp.com",
+        projectId: "myproject-edc0f",
+        storageBucket: "myproject-edc0f.firebasestorage.app",
+        messagingSenderId: "919120455091",
+        appId: "1:919120455091:web:3d515a0986e5f176f617c6",
+        measurementId: "G-KBZ7K0X33C",
+      };
+      const app = initializeApp(firebaseConfig);
+      const provider = new GoogleAuthProvider();
+      const auth = getAuth(app);
+
+      let btnLoginWithGoogle = document.querySelector("#btn_login_with_google");
+
+      btnLoginWithGoogle.addEventListener("click", () => {
+        loginWithGoogle();
+      });
+
+      function loginWithGoogle() {
+        signInWithPopup(auth, provider)
+          .then((res) => {
+            let dataGoogle = {
+              email: res.user.email,
+              name: res.user.displayName,
+            };
+
+            let userData = userList.find((userF) => userF.email == dataGoogle.email);
+
+            if (userData) {
+              localStorage.setItem("userLogin", JSON.stringify(userData));
+            } else {
+              dataGoogle.password = Date.now();
+              userList.push(dataGoogle);
+              userData = dataGoogle;
+              saveUserListToLocal(userList);
+            }
+
+            localStorage.setItem("userLogin", JSON.stringify(userData));
+            window.location.href = "/";
+          })
+          .catch((err) => {
+            console.log("err 1", err);
+          });
+      }
+    </script>
+  </body>
+</html>
