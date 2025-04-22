@@ -144,6 +144,7 @@ document.querySelector(".btn-bet").addEventListener("click", () => {
   currentBetSide = null;
 });
 
+
 document.querySelector(".btn-bet").addEventListener("click", () => {
   const spanLeft = elBetMoneyLeft.querySelector("span");
   const spanRight = elBetMoneyRight.querySelector("span");
@@ -243,64 +244,64 @@ document.querySelector(".btn-cancel").addEventListener("click", () => {
 });
 
 
-// // Lấy phần tử đồng hồ đếm ngược
-// const countdownElement = document.getElementById('countdown');
+// Lấy phần tử đồng hồ đếm ngược
+const countdownElement = document.getElementById('countdown');
 
-// // Đặt số giây ban đầu
-// let timeLeft = 10;
+// Đặt số giây ban đầu
+let timeLeft = 10;
 
-// // Hàm cập nhật thời gian mỗi giây
-// const countdownTimer = setInterval(() => {
-//   // Cập nhật hiển thị thời gian
-//   countdownElement.textContent = timeLeft;
+// Hàm cập nhật thời gian mỗi giây
+const countdownTimer = setInterval(() => {
+  // Cập nhật hiển thị thời gian
+  countdownElement.textContent = timeLeft;
 
-//   // Giảm số giây
-//   timeLeft--;
+  // Giảm số giây
+  timeLeft--;
 
-//   // Dừng đếm ngược khi hết thời gian
-//   if (timeLeft < 0) {
-//     clearInterval(countdownTimer);
-//     countdownElement.textContent = "0";
-//   }
-// }, 1000);
-
-
-// Thời gian đếm ngược
-let timeLeft = 10; // 60 giây
-const countdownElement = document.querySelector('.countdown-timer');
-const plateElement = document.querySelector('.el-plate-open');
-
-// Hàm cập nhật đồng hồ đếm ngược
-function updateCountdown() {
-  if (timeLeft > 0) {
-    countdownElement.textContent = timeLeft;
-    timeLeft--;
-  } else {
+  // Dừng đếm ngược khi hết thời gian
+  if (timeLeft < 0) {
+    clearInterval(countdownTimer);
     countdownElement.textContent = "0";
-    // Khi hết thời gian, hiển thị dĩa trắng và xúc xắc
-    plateElement.style.display = 'flex';
-    setTimeout(() => {
-      plateElement.style.opacity = '1';
-      rollDice(); // Cuộn xúc xắc
-    }, 500);
   }
-}
+}, 1000);
 
-// Hàm cuộn xúc xắc (tạo số ngẫu nhiên)
-function rollDice() {
-  const dice1 = document.getElementById('dice-1');
-  const dice2 = document.getElementById('dice-2');
-  const dice3 = document.getElementById('dice-3');
 
-  const dice1Value = Math.floor(Math.random() * 6) + 1;
-  const dice2Value = Math.floor(Math.random() * 6) + 1;
-  const dice3Value = Math.floor(Math.random() * 6) + 1;
+// // Thời gian đếm ngược
+// let timeLeft = 10; // 60 giây
+// const countdownElement = document.querySelector('.countdown-timer');
+// const plateElement = document.querySelector('.el-plate-open');
 
-  dice1.textContent = dice1Value;
-  dice2.textContent = dice2Value;
-  dice3.textContent = dice3Value;
-}
+// // Hàm cập nhật đồng hồ đếm ngược
+// function updateCountdown() {
+//   if (timeLeft > 0) {
+//     countdownElement.textContent = timeLeft;
+//     timeLeft--;
+//   } else {
+//     countdownElement.textContent = "0";
+//     // Khi hết thời gian, hiển thị dĩa trắng và xúc xắc
+//     plateElement.style.display = 'flex';
+//     setTimeout(() => {
+//       plateElement.style.opacity = '1';
+//       rollDice(); // Cuộn xúc xắc
+//     }, 500);
+//   }
+// }
 
-// Khởi động đồng hồ đếm ngược
-setInterval(updateCountdown, 1000);
+// // Hàm cuộn xúc xắc (tạo số ngẫu nhiên)
+// function rollDice() {
+//   const dice1 = document.getElementById('dice-1');
+//   const dice2 = document.getElementById('dice-2');
+//   const dice3 = document.getElementById('dice-3');
+
+//   const dice1Value = Math.floor(Math.random() * 6) + 1;
+//   const dice2Value = Math.floor(Math.random() * 6) + 1;
+//   const dice3Value = Math.floor(Math.random() * 6) + 1;
+
+//   dice1.textContent = dice1Value;
+//   dice2.textContent = dice2Value;
+//   dice3.textContent = dice3Value;
+// }
+
+// // Khởi động đồng hồ đếm ngược
+// setInterval(updateCountdown, 1000);
 
