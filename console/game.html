@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tài Xỉu</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./game.css" />
+  </head>
+  <body>
+    <div class="container-table">
+      <div class="position-relative table">
+        <img src="../image/image-game/table.png" class="position-absolute top-50 start-50 translate-middle" />
+        <div class="el-even"><img src="../image/image-game/even.png" class="position-absolute" /></div>
+        <div class="el-odd"><img src="../image/image-game/odd.png" class="position-absolute" /></div>
+        <div class="el-bet-money-right d-flex flex-column" onclick="showInputBetRight()">
+          <img src="../image/image-game/cuoc.png" class="position-absolute" />
+        </div>
+        <div class="el-bet-main-right">
+          <span>0</span>
+        </div>
+        <div class="el-bet-money-left" onclick="showInputBetLeft()">
+          <img src="../image/image-game/cuoc.png" class="position-absolute" />
+        </div>
+        <div class="el-bet-main-left">
+          <span>0</span>
+        </div>
+        <div class="el-bowl">
+          <img src="../image/image-game/bowl.png" class="position-absolute top-50 start-50 translate-middle" />
+        </div>
+        <div class="el-plate">
+          <img src="../image/image-game/plate.png" class="position-absolute top-50 start-50 translate-middle" />
+          <span></span>
+        </div>
+        <div class="btn-delete" onclick="logout()">
+          <img src="../image/image-game/delete.png" class="position-absolute" />
+        </div>
+        <div class="btn-cup"><img src="../image/image-game/cup.png" class="position-absolute" /></div>
+        <div class="btn-chat"><img src="../image/image-game/chat.png" class="position-absolute" /></div>
+        <div class="btn-hand-delete"><img src="../image/image-game/hand-delete.png" class="position-absolute" /></div>
+        <div class="btn-dor"><img src="../image/image-game/!.png" class="position-absolute" /></div>
+        <div class="btn-rank"><img src="../image/image-game/rank.png" class="position-absolute" /></div>
+        <div class="btn-question"><img src="../image/image-game/question.png" class="position-absolute" /></div>
+        <div class="btn-note"><img src="../image/image-game/note.png" class="position-absolute" /></div>
+      </div>
+
+      <div class="container-bet">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="k-1">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>1K</span></div>
+          </div>
+          <div class="k-10">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>10K</span></div>
+          </div>
+          <div class="k-50">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>50K</span></div>
+          </div>
+          <div class="k-100">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>100K</span></div>
+          </div>
+          <div class="k-500">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>500K</span></div>
+          </div>
+          <div class="m-1">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>1M</span></div>
+          </div>
+          <div class="m-10">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>10M</span></div>
+          </div>
+          <div class="m-50">
+            <img src="../image/image-game/level-money.png" />
+            <div class="position-relative"><span>50M</span></div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="btn-x2"><img src="../image/image-game/x2.png" /></div>
+          <div class="btn-bet"><img src="../image/image-game/bet.png" /></div>
+          <div class="btn-cancel"><img src="../image/image-game/cancel.png" alt="" /></div>
+        </div>
+      </div>
+
+      <div class="container-current-money">
+        <div class="avata-user"></div>
+        <div class="current-money">
+          <span class="money">99999999999999</span>
+          <img src="../image/image-game/cur-money.png" />
+          <span>admin686</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../admin/admin.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
