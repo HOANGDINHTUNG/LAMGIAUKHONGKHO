@@ -5,38 +5,50 @@ function logout() {
 
 function renderHeader() {
   let adminLoginNameEL = document.querySelector("#admin_login_name");
-  adminLoginNameEL.innerText = adminLoginNameEL.innerText.replace("[name]", getUserLoginData().name);
+  if (adminLoginNameEL) {
+    let userData = typeof getUserLoginData === "function" ? getUserLoginData() : null;
+    let name = userData ? userData.name : "Admin";
+    adminLoginNameEL.innerText = adminLoginNameEL.innerText.replace("[name]", name);
+  }
 }
 
 renderHeader();
 
 const darkToggle = document.getElementById("darkModeToggle");
-darkToggle.addEventListener("change", () => {
-  document.documentElement.setAttribute("data-bs-theme", darkToggle.checked ? "dark" : "light");
-});
+if (darkToggle) {
+  darkToggle.addEventListener("change", () => {
+    document.documentElement.setAttribute("data-bs-theme", darkToggle.checked ? "dark" : "light");
+  });
+}
 
 const toggleSidebar = document.getElementById("toggleSidebar");
-toggleSidebar.addEventListener("click", () => {
-  document.getElementById("sidebar").classList.toggle("collapsed");
-});
+if (toggleSidebar) {
+  toggleSidebar.addEventListener("click", () => {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar) sidebar.classList.toggle("collapsed");
+  });
+}
 
 function showToast(message) {
-  document.getElementById("toastBody").innerText = message;
-  const toast = new bootstrap.Toast(document.getElementById("liveToast"));
-  toast.show();
+  const toastBody = document.getElementById("toastBody");
+  const liveToast = document.getElementById("liveToast");
+  if (toastBody && liveToast && typeof bootstrap !== "undefined") {
+    toastBody.innerText = message;
+    const toast = new bootstrap.Toast(liveToast);
+    toast.show();
+  }
 }
 
 const checkbox = document.getElementById("checkbox");
-
-// Set chế độ mặc định khi load trang
-document.body.classList.add("light-mode");
-
-checkbox.addEventListener("change", function () {
-  if (this.checked) {
-    document.body.classList.remove("dark-mode");
-    document.body.classList.add("light-mode");
-  } else {
-    document.body.classList.remove("light-mode");
-    document.body.classList.add("dark-mode");
-  }
-});
+if (checkbox) {
+  document.body.classList.add("light-mode");
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+    } else {
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+    }
+  });
+}

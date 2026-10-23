@@ -7,6 +7,7 @@ checkAuthen()
 
 function renderHeader() {
   let featureNav = document.querySelector(".feature-support");
+  if (!featureNav) return;
   console.log(userLogin)
   if (userLogin) {
     /* đã login */
@@ -142,23 +143,25 @@ function renderHeader() {
 }
 
 function logout() {
-  if (!confirm("bạn thật sự muốn đăng xuất?")) return
-  window.location.reload()
-  localStorage.removeItem("userLogin")
+  if (!confirm("Bạn thật sự muốn đăng xuất?")) return;
+  localStorage.removeItem("userLogin");
+  window.location.reload();
 }
 
 renderHeader();
 
-let play_btn=document.querySelectorAll(".play-btn")[12]
-let carouselItem=document.querySelectorAll(".carouselItem")[12]
-carouselItem.addEventListener('click',()=>{
-  if(userLogin){
-    play_btn.innerHTML=`
-      <a href="./console/game.html">Vào trò chơi</a>
-    `
-  }else{
-    play_btn.innerHTML=`
-      <a href="./auth/authen.html" target="_parent">Vào trò chơi</a>
-    `
-  }
-})
+let play_btn = document.querySelectorAll(".play-btn")[12];
+let carouselItem = document.querySelectorAll(".carouselItem")[12];
+if (carouselItem && play_btn) {
+  carouselItem.addEventListener('click', () => {
+    if (userLogin) {
+      play_btn.innerHTML = `
+        <a href="./console/game.html">Vào trò chơi</a>
+      `;
+    } else {
+      play_btn.innerHTML = `
+        <a href="./auth/authen.html" target="_parent">Vào trò chơi</a>
+      `;
+    }
+  });
+}

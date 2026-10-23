@@ -2,21 +2,27 @@ const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
+if (signUpButton && container) {
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+}
 
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
+if (signInButton && container) {
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+}
 
 
 function authenCheck() {
-    if(localStorage.getItem("userLogin")) {
-        window.location.href = "/"
+    // Chỉ chuyển hướng nếu đang ở trang đăng nhập (authen.html)
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes("authen") && localStorage.getItem("userLogin")) {
+        window.location.href = "../index.html";
     }
 }
-authenCheck()
+authenCheck();
 
 
 

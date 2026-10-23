@@ -1,122 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tài Xỉu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Tài Xỉu MD5 - Làm Giàu Không Khó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./game.css" />
   </head>
   <body>
     <div class="container-table">
-      <div class="position-relative table">
-        <img src="../image/image-game/table.png" class="position-absolute top-50 start-50 translate-middle" />
-        <div class="el-even"><img src="../image/image-game/even.png" class="position-absolute" /></div>
-        <div class="el-odd"><img src="../image/image-game/odd.png" class="position-absolute" /></div>
-        <div class="el-bet-money-right d-flex flex-column" onclick="showInputBetRight()">
-          <img src="../image/image-game/cuoc.png" class="position-absolute" />
+      <div class="position-relative game-table table">
+        <img src="../image/image-game/table.png" class="position-absolute top-50 start-50 translate-middle main-table-img" />
+        
+        <!-- Nút Home ở góc trên trái viền bàn -->
+        <div class="btn-home" title="Về trang chủ" onclick="logout()">
+          <i class="fa-solid fa-house"></i>
         </div>
-        <div class="el-bet-main-right">
-          <span></span>
-        </div>
-        <div class="el-bet-money-left" onclick="showInputBetLeft()">
-          <img src="../image/image-game/cuoc.png" class="position-absolute" />
-        </div>
-        <div class="el-bet-main-left">
-          <span></span>
-        </div>
-        <div class="el-bowl">
-          <img src="../image/image-game/bowl.png" class="position-absolute top-50 start-50 translate-middle" />
-        </div>
-        <div class="el-plate">
-          <img src="../image/image-game/plate.png" class="position-absolute top-50 start-50 translate-middle" />
-          <div id="countdown" class="countdown-timer position-absolute top-50 start-50 translate-middle">
-            60
-          </div>
-        </div>
-        <div class="btn-delete" onclick="logout()">
-          <img src="../image/image-game/delete.png" class="position-absolute" />
-        </div>
-        <div class="btn-cup"><img src="../image/image-game/cup.png" class="position-absolute" /></div>
-        <div class="btn-chat"><img src="../image/image-game/chat.png" class="position-absolute" /></div>
-        <div class="btn-hand-delete"><img src="../image/image-game/hand-delete.png" class="position-absolute" /></div>
-        <div class="btn-dor"><img src="../image/image-game/!.png" class="position-absolute" /></div>
-        <div class="btn-rank"><img src="../image/image-game/rank.png" class="position-absolute" /></div>
-        <div class="btn-question"><img src="../image/image-game/question.png" class="position-absolute" /></div>
-        <div class="btn-note"><img src="../image/image-game/note.png" class="position-absolute" /></div>
-      </div>
 
+        <!-- Mã phiên Tài Xỉu MD5 ở trên đỉnh giữa bàn -->
+        <div class="session-id-badge" id="sessionIdBadge">#XOSO66-2610221345</div>
+
+        <!-- Huy hiệu Giờ Vàng Cao Điểm (19h-21h & 11h-12h) -->
+        <div class="peak-hours-badge" id="peakHoursBadge" title="Giờ Vàng Cao Điểm: Lượng người chơi và tiền cược tăng đột biến! (Bấm để bật/tắt)" onclick="togglePeakMode()">
+          <span class="fire-icon">🔥</span> GIỜ VÀNG
+        </div>
+
+        <!-- Số lượng người cược hai bên (đặt vào 2 ô có sẵn trên mặt bàn) -->
+        <div class="room-players-badge left">
+          <span id="playerCountLeft">0</span>
+        </div>
+        <div class="room-players-badge right">
+          <span id="playerCountRight">0</span>
+        </div>
+        
+        <!-- Cửa TÀI (bên trái trên dải lụa đỏ của bàn) -->
+        <div class="el-even" title="Cửa TÀI (Tổng 11 - 17)" onclick="showInputBetLeft()">
+          <img src="../image/image-game/even.png" alt="TÀI" />
+        </div>
+        <!-- Tổng tiền cả phòng cược TÀI -->
+        <div class="room-bet-total left" id="roomBetLeft">0</div>
+        <!-- Nút cược TÀI -->
+        <div class="el-bet-money-left" onclick="showInputBetLeft()" title="Đặt cược TÀI">
+          <img src="../image/image-game/cuoc.png" alt="Cược TÀI" />
+          <span></span>
+        </div>
+        <!-- Số tiền người chơi này đã cược vào TÀI -->
+        <div class="user-bet-amount left" id="userBetLeft">0</div>
+        
+        <!-- Cửa XỈU (bên phải trên dải lụa đỏ của bàn) -->
+        <div class="el-odd" title="Cửa XỈU (Tổng 4 - 10)" onclick="showInputBetRight()">
+          <img src="../image/image-game/odd.png" alt="XỈU" />
+        </div>
+        <!-- Tổng tiền cả phòng cược XỈU -->
+        <div class="room-bet-total right" id="roomBetRight">0</div>
+        <!-- Nút cược XỈU -->
+        <div class="el-bet-money-right" onclick="showInputBetRight()" title="Đặt cược XỈU">
+          <img src="../image/image-game/cuoc.png" alt="Cược XỈU" />
+          <span></span>
+        </div>
+        <!-- Số tiền người chơi này đã cược vào XỈU -->
+        <div class="user-bet-amount right" id="userBetRight">0</div>
+
+        <!-- KHU VỰC ĐĨA SỨ & ĐẾM NGƯỢC 60 GIÂY & 3 VIÊN XÚC XẮC -->
+        <div class="dish-area position-absolute top-50 start-50 translate-middle" id="dishArea">
+          <!-- Chiếc đĩa đen rồng nằm im phía dưới xúc xắc -->
+          <img src="../image/image-game/bowl.png" class="dish-plate" id="dishPlate" alt="Đĩa đen rồng" />
+
+          <!-- 3 viên xúc xắc hoàng kim (dor1 - dor6) xếp kiểu TAM GIÁC nằm trên đĩa đen -->
+          <div class="dice-container" id="diceContainer" style="display: none;">
+            <div class="dice-row-top">
+              <img src="../image/image-game/dor1.png" class="dice-item" id="dice-1" alt="Xúc xắc 1" />
+            </div>
+            <div class="dice-row-bottom">
+              <img src="../image/image-game/dor2.png" class="dice-item" id="dice-2" alt="Xúc xắc 2" />
+              <img src="../image/image-game/dor3.png" class="dice-item" id="dice-3" alt="Xúc xắc 3" />
+            </div>
+          </div>
+
+          <!-- Chiếc đĩa trắng nằm ở trên là đĩa lắc (úp lại trong 60s, lắc khi hết giờ và mở lên) -->
+          <div class="el-bowl" id="bowl">
+            <img src="../image/image-game/plate.png" alt="Đĩa trắng lắc" />
+          </div>
+
+          <!-- Số đếm ngược to khổng lồ 60 giây màu vàng viền trắng hiển thị trên mặt đĩa trắng -->
+          <div id="countdown" class="plate-countdown">60</div>
+        </div>
+
+        <!-- Hiệu ứng chữ tiền thắng bay lên khi trúng cược -->
+        <div class="floating-win" id="floatingWin" style="display: none;"></div>
+
+        <!-- RÃNH HIỂN THỊ CÁC NÚT NHỎ ĐEN TRẮNG (SOI CẦU KẾT QUẢ CŨ) -->
+        <div class="beads-history-track" id="beadsTrack" title="Lịch sử cầu: Đen = TÀI, Trắng = XỈU"></div>
+
+        <!-- THANH CHUỖI MD5 Ở DƯỚI CÙNG CỦA BÀN -->
+        <div class="md5-bar" id="md5Bar">
+          <span class="md5-badge">CHUỖI MD5</span>
+          <span class="md5-hash" id="md5Hash">c14711cadd6eaffe5cf76ee2c3a6b25faf9d</span>
+          <button type="button" class="md5-copy-btn" onclick="copyMd5()" title="Sao chép chuỗi MD5">Copy</button>
+        </div>
+
+        <!-- Các nút chức năng viền bàn -->
+        <div class="btn-delete" title="Đăng xuất / Về trang chủ" onclick="logout()">
+          <img src="../image/image-game/delete.png" />
+        </div>
+        <div class="btn-cup" title="Lịch sử cầu Tài Xỉu" onclick="showHistory()">
+          <img src="../image/image-game/cup.png" />
+        </div>
+        <div class="btn-chat" title="Bật/Tắt Phòng Chat" onclick="toggleChat()">
+          <img src="../image/image-game/chat.png" />
+          <span class="chat-badge" id="chatBadge"></span>
+        </div>
+        <div class="btn-hand" id="btnHand" title="Chế độ Nặn: ĐANG TẮT (bấm để bật)" onclick="toggleNan()">
+          <img id="handImg" src="../image/image-game/hand-delete.png" alt="Nặn đĩa" />
+        </div>
+        <div class="btn-dor" title="Luật chơi Tài Xỉu" onclick="showHelp()">
+          <img src="../image/image-game/!.png" />
+        </div>
+        <div class="btn-rank" title="Bảng xếp hạng Đại gia" onclick="showRank()">
+          <img src="../image/image-game/rank.png" />
+        </div>
+        <div class="btn-question" title="Hướng dẫn đặt cược" onclick="showHelp()">
+          <img src="../image/image-game/question.png" />
+        </div>
+        <div class="btn-note" title="Thống kê ván" onclick="showHistory()">
+          <img src="../image/image-game/note.png" />
+        </div>
+      </div> <!-- /game-table -->
+
+      <!-- Khay chọn mệnh giá cược & nút thao tác nằm phía dưới bàn chơi -->
       <div class="container-bet">
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="chips-row">
           <div class="k-1" data-amount="1000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>1K</span></div>
+            <span>1K</span>
           </div>
           <div class="k-10" data-amount="10000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>10K</span></div>
+            <span>10K</span>
           </div>
           <div class="k-50" data-amount="50000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>50K</span></div>
+            <span>50K</span>
           </div>
           <div class="k-100" data-amount="100000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>100K</span></div>
+            <span>100K</span>
           </div>
           <div class="k-500" data-amount="500000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>500K</span></div>
+            <span>500K</span>
           </div>
           <div class="m-1" data-amount="1000000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>1M</span></div>
+            <span>1M</span>
           </div>
           <div class="m-10" data-amount="10000000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>10M</span></div>
+            <span>10M</span>
           </div>
           <div class="m-50" data-amount="50000000">
             <img src="../image/image-game/level-money.png" />
-            <div class="position-relative"><span>50M</span></div>
+            <span>50M</span>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <div class="btn-x2"><img src="../image/image-game/x2.png" /></div>
-          <div class="btn-bet"><img src="../image/image-game/bet.png" /></div>
-          <div class="btn-cancel"><img src="../image/image-game/cancel.png" alt="" /></div>
+        <div class="actions-row">
+          <div class="btn-x2" onclick="doubleBet()" title="Nhân đôi số tiền đang chọn"><img src="../image/image-game/x2.png" /></div>
+          <div class="btn-bet" onclick="confirmBet()" title="Xác nhận Đặt cược"><img src="../image/image-game/bet.png" /></div>
+          <div class="btn-cancel" onclick="cancelBet()" title="Hủy số tiền vừa chọn"><img src="../image/image-game/cancel.png" alt="Hủy" /></div>
         </div>
       </div>
 
+      <!-- Khung hiển thị thông tin tài khoản và số dư (chuẩn khớp cur-money.png) -->
       <div class="container-current-money">
-        <div class="avata-user"></div>
         <div class="current-money">
-          <span class="money"></span>
           <img src="../image/image-game/cur-money.png" />
-          <span class="username"></span>
+          <span class="username">Người chơi</span>
+          <span class="money">0 đ</span>
+        </div>
+      </div>
+
+      <!-- KHUNG CHAT TRỰC TUYẾN SÔI ĐỘNG -->
+      <div class="chat-box" id="chatBox">
+        <div class="chat-header">
+          <button class="chat-close" onclick="toggleChat()" type="button" title="Đóng chat">&times;</button>
+        </div>
+        <div class="chat-body" id="chatMessages"></div>
+        <div class="chat-footer">
+          <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." maxlength="70" onkeydown="handleChatKey(event)" />
+          <button type="button" class="btn-send-chat" onclick="sendChatMessage()" title="Gửi tin nhắn">
+            <img src="../image/image-game/sent.png" alt="Gửi" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Lịch Sử Cầu -->
+      <div class="history-modal" id="historyModal" style="display: none;">
+        <div class="history-content">
+          <div class="history-header">
+            <span>LỊCH SỬ CẦU TÀI XỈU</span>
+            <button onclick="closeHistory()">&times;</button>
+          </div>
+          <div class="history-list" id="historyList"></div>
         </div>
       </div>
     </div>
 
-    <div class="container-table">
-      <!-- Các phần tử khác như trước -->
-    
-      <!-- Phần dĩa trắng và xúc xắc khi thời gian kết thúc -->
-      <div class="el-plate-open" style="display: none;">
-        <img src="../image/image-game/plate.png" class="position-absolute top-50 start-50 translate-middle" />
-        <div class="dice-container">
-          <div class="dice" id="dice-1"></div>
-          <div class="dice" id="dice-2"></div>
-          <div class="dice" id="dice-3"></div>
-        </div>
-      </div>
-    
-    </div>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../home/home.js"></script>
-    <script src="../admin/admin.js"></script>
     <script src="./game.js"></script>
   </body>
 </html>
